@@ -1,0 +1,7 @@
+from wer import wer
+
+r = ['In', 'computational', 'linguistics', 'and', 'computer', 'science', ',', 'edit', 'distance', 'is', 'a', 'way', 'of', 'quantifying', 'how', 'dissimilar', 'two', 'strings', 'are', 'to', 'one', 'another', 'by', 'counting', 'the', 'minimum', 'number', 'of', 'operations', 'required', 'to', 'transform', 'one', 'string', 'into', 'the', 'other.', 'Edit', 'distances', 'find', 'applications', 'in', 'natural', 'language', 'processing,', 'where', 'automatic', 'spelling', 'correction', 'can', 'determine', 'candidate', 'corrections', 'for', 'a', 'misspelled', 'word', 'by', 'selecting', 'words', 'from', 'a', 'dictionary', 'that', 'have', 'a', 'low', 'distance', 'to', 'the', 'word', 'in', 'question']
+
+h = ['In', 'linguistics', 'and', 'computer', 'science', 'theory', ',', 'edit', 'distance', 'iss', 'a', 'way', 'of', 'quantifying', 'how', 'dissimilar', 'the', 'two', 'string', 'is', 'to', 'one', 'another', 'by', 'counting', 'the', 'number', 'of', 'operations', 'required', 'to', 'transform', 'one', 'string', 'into', 'the', 'other.', 'Edit', 'distances', 'find', 'applications', 'in', 'natural', 'language', 'processing,', 'where', 'automatic', 'spelling', 'correction', 'can', 'determine', 'candidate', 'corrections', 'for', 'a', 'misspelled', 'word', 'by', 'selecting', 'words', 'from', 'a', 'dictionary', 'that', 'have', 'a', 'low', 'distance', 'to', 'the', 'words', 'in', 'question']
+
+wer(r, h)
