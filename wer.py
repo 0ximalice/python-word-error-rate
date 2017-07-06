@@ -17,7 +17,7 @@ def wer(r, h):
     Given two list of strings how many word error rate(insert, delete or substitution).
     """
 
-    d = numpy.zeros((len(r) + 1) * (len(h) + 1), dtype=numpy.uint8)
+    d = numpy.zeros((len(r) + 1) * (len(h) + 1), dtype=numpy.uint16)
     d = d.reshape((len(r) + 1, len(h) + 1))
     for i in range(len(r) + 1):
         for j in range(len(h) + 1):
