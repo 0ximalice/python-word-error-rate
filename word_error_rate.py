@@ -7,16 +7,13 @@ https://en.wikipedia.org/wiki/Word_error_rate
 https://www.github.com/mission-peace/interview/wiki
 
 """
-
 import numpy
 
-
-def wer(r, h):
+def get_word_error_rate(r, h):
 
     """
     Given two list of strings how many word error rate(insert, delete or substitution).
     """
-
     d = numpy.zeros((len(r) + 1) * (len(h) + 1), dtype=numpy.uint16)
     d = d.reshape((len(r) + 1, len(h) + 1))
     for i in range(len(r) + 1):
@@ -36,8 +33,12 @@ def wer(r, h):
                 deletion = d[i - 1][j] + 1
                 d[i][j] = min(substitution, insertion, deletion)
     result = float(d[len(r)][len(h)]) / len(r) * 100
-    print('WER %.4f %%' % result)
 
+    print_to_html(r, h, d)
+    return result
+
+def print_to_html(r, h, d):
+    filename = "diff.html"
     x = len(r)
     y = len(h)
 
@@ -66,8 +67,10 @@ def wer(r, h):
             print('\nWe got an error.')
             break
 
-    html = html + '</body></html>'
+    html += '</body></html>'
 
-    with open('diff.html', 'w', encoding='utf8') as f:
+    with open('diff.html', 'w') as f:
         f.write(html)
-        f.close()
+    f.close()
+    print("Printed comparison to: {0}".format(filename))
+    
